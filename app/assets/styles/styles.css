@@ -1,15 +1,7 @@
-$mainBlue : #2f5572; 
-
-body{
-    color: $mainBlue;
-    padding: 20px;
-    margin : 10px;
-    columns: 1px;
-}
-
-.box{
-    a{
-        display: block;
-        padding: 10px;
-    }
-}
+@import "normalize.css"; 
+/*
+    * just type the npm package like normal, 
+    * normalize.css makes all browser render more consistently
+*/
+@import "base/_global";
+@import "modules/_large-hero";
