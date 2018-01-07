@@ -3,5 +3,8 @@
     * just type the npm package like normal, 
     * normalize.css makes all browser render more consistently
 */
-@import "base/_global";
-@import "modules/_large-hero";
+@import "base/_global.css";
+@import "base/_variables.css";
+@import "base/_mixins.css";
+@import "modules/_btn.css";
+@import "modules/_large-hero.css";
