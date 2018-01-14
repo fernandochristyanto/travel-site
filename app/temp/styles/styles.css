@@ -1391,8 +1391,8 @@ a{
 }
 
 .reveal-item--left-offset{
-        -webkit-transform: translateX(-35px);
-                transform: translateX(-35px);
+        -webkit-transform: translateX(-30px) scale(1.05);
+                transform: translateX(-30px) scale(1.05);
         -webkit-transition: all 1s ease-out;
         transition: all 1s ease-out;
     }
@@ -1404,4 +1404,6 @@ a{
 
 .reveal-item--is-visible{
         opacity: 1;
+        -webkit-transform: scale(1);
+                transform: scale(1);
     }

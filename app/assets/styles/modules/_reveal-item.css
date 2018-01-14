@@ -3,7 +3,7 @@
     transition: all 1.5s ease-out;
 
     &--left-offset{
-        transform: translateX(-35px);
+        transform: translateX(-30px) scale(1.05);
         transition: all 1s ease-out;
     }
 
@@ -13,5 +13,6 @@
 
     &--is-visible{
         opacity: 1;
+        transform: scale(1);
     }
 }
