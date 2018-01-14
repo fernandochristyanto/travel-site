@@ -69,7 +69,6 @@
 
 var $ = __webpack_require__(1);
 var Person = __webpack_require__(2);
-alert("as aa");
 var john = new Person("John", "Blue");
 john.greet();
 
