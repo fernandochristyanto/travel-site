@@ -1,16 +1,24 @@
 .site-header{
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
     padding: 10px 0;
+    transition: background-color .3s ease-out;
+
+    &--is-expanded{
+        background-color: rgba($mainBlue, .6);
+    }
 
     @mixin atMedium{
         background-color: rgba($mainBlue, .3);
     }
 
     &__btn-container{
-        float: right;
-    }
+        text-align: center;
+        @mixin atMedium{
+            float: right;
+        }
+    }       
     &__logo{
         position: absolute;
         top: 0;
@@ -30,19 +38,94 @@
     }
 
     &__menu-content{
-        display: none;
+        z-index: -1;
+        opacity: 0;
+        position: relative;
+        transform: scale(1.2);
+        transition: all .3s ease-out;
+        padding-top: 90px; /*push the nav content down below on smaller screen*/
+        &--is-visible{
+            opacity: 1;
+            z-index: 1;
+            transform: scale(1);
+        }
         @mixin atMedium{
             display: block;
+            padding-top: 0; /*resets on larger screen   */
+            transform: scale(1);
+            z-index: 10;
+            opacity: 1;
         }
     }
+    &__menu-icon--close-x{
+        &::before{
+            transform: rotate(45deg) scaleX(1.05);
+        }
+        .site-header__menu-icon__middle{
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        &::after{
+            transform: rotate(-45deg) scaleX(1.05) translateY(1px);
+        }
+    }
+
     &__menu-icon{
-        width: 40px;
-        height: 40px;
-        background-color: $white;
+        width: 30px;
+        height: 30px;
         position: absolute;
         top : 20px;
         right: 20px;
+        z-index: 10;
 
+        &::before{
+            transform-origin: 0 0;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $white;
+            transition: transform .3s ease-out;
+            @mixin atSmall{
+                height: 4px;
+            }
+        }
+        &__middle{
+            transform-origin: 0 50%;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $white;
+            transition: all .3s ease-out;
+            @mixin atSmall{
+                top : 15px;
+                height: 4px;
+            }
+        }
+        &::after{
+            transform-origin: 0 100%;
+            content: ""; 
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $white;
+            transition: transform .3s ease-out;
+            @mixin atSmall{
+                top : 30px;
+                height: 4px;
+            }
+        }
+
+        @mixin atSmall{
+            width: 40px;
+            height: 40px;
+        }
         @mixin atMedium{
             display: none;
         }
