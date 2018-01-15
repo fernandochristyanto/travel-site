@@ -1393,6 +1393,10 @@ a{
             padding: 12px 0;
             background-color: transparent
     }
+
+            .primary-nav a.is-current-link{
+                color : #FABB69;
+            }
     }
 
 .reveal-item{
